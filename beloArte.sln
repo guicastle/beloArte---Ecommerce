@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - beloArte.Domain", "4 - beloArte.Domain", "{5572A5E3-9EF7-431E-94A9-1F2633D4186A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beloArte.Domain", "beloArte.Domain\beloArte.Domain.csproj", "{B07F78C9-7CBB-4DB0-9EC2-25FD9F78652E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - beloArte.DAL", "3 - beloArte.DAL", "{3B5D59DC-2203-466C-BD71-2600FF940DC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - beloArte.BLL", "2 - beloArte.BLL", "{3D7CD8FC-A103-4098-8300-30A76914C69A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - beloArte.Infra", "5 - beloArte.Infra", "{01F71BBC-0720-4DAB-8ED7-8872C89A3E74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beloArte.BLL", "beloArte.BLL\beloArte.BLL.csproj", "{429671BD-340C-42BA-BBBC-AF6A6C26233E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beloArte.DAL", "beloArte.DAL\beloArte.DAL.csproj", "{CE0B9188-86FA-4DED-B9B1-4C9BB1746707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beloArte.Infra", "beloArte.Infra\beloArte.Infra.csproj", "{754D7A32-C539-4C72-95E6-49F8AF1F95CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - beloArte.UI", "1 - beloArte.UI", "{F270676D-85AE-4204-A129-E1B8C310B131}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beloArte.UI", "beloArte.UI\beloArte.UI.csproj", "{9461E704-B1C3-4282-8AEF-4CB3B983FCEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B07F78C9-7CBB-4DB0-9EC2-25FD9F78652E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07F78C9-7CBB-4DB0-9EC2-25FD9F78652E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07F78C9-7CBB-4DB0-9EC2-25FD9F78652E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07F78C9-7CBB-4DB0-9EC2-25FD9F78652E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{429671BD-340C-42BA-BBBC-AF6A6C26233E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{429671BD-340C-42BA-BBBC-AF6A6C26233E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{429671BD-340C-42BA-BBBC-AF6A6C26233E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{429671BD-340C-42BA-BBBC-AF6A6C26233E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE0B9188-86FA-4DED-B9B1-4C9BB1746707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0B9188-86FA-4DED-B9B1-4C9BB1746707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE0B9188-86FA-4DED-B9B1-4C9BB1746707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0B9188-86FA-4DED-B9B1-4C9BB1746707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{754D7A32-C539-4C72-95E6-49F8AF1F95CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{754D7A32-C539-4C72-95E6-49F8AF1F95CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{754D7A32-C539-4C72-95E6-49F8AF1F95CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{754D7A32-C539-4C72-95E6-49F8AF1F95CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9461E704-B1C3-4282-8AEF-4CB3B983FCEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9461E704-B1C3-4282-8AEF-4CB3B983FCEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9461E704-B1C3-4282-8AEF-4CB3B983FCEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9461E704-B1C3-4282-8AEF-4CB3B983FCEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B07F78C9-7CBB-4DB0-9EC2-25FD9F78652E} = {5572A5E3-9EF7-431E-94A9-1F2633D4186A}
+		{429671BD-340C-42BA-BBBC-AF6A6C26233E} = {3D7CD8FC-A103-4098-8300-30A76914C69A}
+		{CE0B9188-86FA-4DED-B9B1-4C9BB1746707} = {3B5D59DC-2203-466C-BD71-2600FF940DC0}
+		{754D7A32-C539-4C72-95E6-49F8AF1F95CF} = {01F71BBC-0720-4DAB-8ED7-8872C89A3E74}
+		{9461E704-B1C3-4282-8AEF-4CB3B983FCEA} = {F270676D-85AE-4204-A129-E1B8C310B131}
+	EndGlobalSection
+EndGlobal
