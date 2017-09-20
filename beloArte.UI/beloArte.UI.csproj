@@ -88,11 +88,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\icons\icon-1001596_960_720.png" />
+    <Content Include="Content\icons\logo.png" />
+    <Content Include="Content\icons\cart-shop.png" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\vendor\popper\popper.js" />
+    <Content Include="Content\vendor\popper\popper.min.js" />
+    <Content Include="Content\vendor\jquery\jquery.js" />
+    <Content Include="Content\vendor\jquery\jquery.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\PaginaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -101,6 +118,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\Pagina\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,7 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\beloArte.BLL\beloArte.BLL.csproj">
@@ -141,7 +158,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52609</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52609/</IISUrl>
+          <IISUrl>http://localhost:8080/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
