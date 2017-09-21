@@ -1,0 +1,173 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Produtos</title>
+
+    <style>
+        .row.content {
+            height: 1500px
+        }
+
+        .sidenav {
+            background-color: #fbfafa;
+            height: 100%;
+        }
+
+        .sidenav {
+            height: auto;
+            padding: 15px;
+        }
+
+        .row.content {
+            height: auto;
+        }
+    </style>
+
+
+</head>
+<body>
+    @RenderPage("~/Views/_Navbar.cshtml")
+
+    <hr />
+    <!-- Page Content -->
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-md-3 sidenav">
+                <hr />
+                <div class="panel panel-default col-md-12">
+                    <div class="search" style="margin-top: 10%; margin-bottom: 5%;">
+                        <label>Filtros</label>
+                        <button type="button" class="btn btn-primary" onclick="BuscarProdutos()" style="float: right;">Pesquisar</button>
+                    </div>
+
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <h5 class="mb-0">
+                                    <a style="text-decoration: none" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Categorias
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse in show" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="card-block" style="padding: 5%">
+                                    <div class="checkbox">
+                                        <label class="favoritos-text">
+                                            <input type="checkbox" name="checkbox[]" value="Lista Favoritos" checked style="margin-right: 7px;">Ofertas da Semana
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="recomendados-text">
+                                            <input type="checkbox" name="checkbox[]" value="Recomendados" style="margin-right: 7px;">Recomendados
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="economia-text">
+                                            <input type="checkbox" name="checkbox[]" value="Economia de Energia" style="margin-right: 7px;">Economia de Energia
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="eletrodomesticos-text">
+                                            <input type="checkbox" name="checkbox[]" value="Eletrodomésticos" style="margin-right: 7px;">Eletrodomésticos
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" style="margin-top:5%">
+                            <div class="card-header" role="tab" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <a style="text-decoration: none" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Preço
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse in show" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="card-block" style="padding:5%">
+                                    <div class="form-group row">
+                                        <div class="col-xs-12 col-md-12 input-group">
+                                            <span class="input-group-addon">R$</span>
+                                            <input class="form-control preco" id="precoMin" min="0" type="text" placeholder="min.">
+                                        </div>
+                                        <div style="border-bottom: 3px solid #4588ba; margin-bottom:10px; margin: 2%"></div>
+                                        <div class="col-xs-12 col-md-12 input-group">
+                                            <span class="input-group-addon">R$</span>
+                                            <input class="form-control preco" id="precoMax" min="0" type="text" placeholder="max.">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- Page Features -->
+            <div class="col-md-9">
+                <div class="row text-center">
+
+                    <div class="col-lg-4 col-md-4 mb-4">
+                        <div class="card">
+                            <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">Titulo do Produto</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="preco-por" style=" font-size: 18px !important; color: #09426f; text-align: right; display: inline-block ">
+                                    Por <strong style=" font-weight: 700; color: #3498db; font-size: 19px; ">R$ 19,99</strong>
+                                </p>
+                                <a href="#" class="btn btn-success btn-sm" style="float: right"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 mb-4">
+                        <div class="card">
+                            <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">Titulo do Produto</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="preco-por" style=" font-size: 18px !important; color: #09426f; text-align: right; display: inline-block ">
+                                    Por <strong style=" font-weight: 700; color: #3498db; font-size: 19px; ">R$ 39,90</strong>
+                                </p>
+                                <a href="#" class="btn btn-success btn-sm" style="float: right"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 mb-4">
+                        <div class="card">
+                            <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">Titulo do Produto</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="preco-por" style=" font-size: 18px !important; color: #09426f; text-align: right; display: inline-block ">
+                                    Por <strong style=" font-weight: 700; color: #3498db; font-size: 19px; ">R$ 49,99</strong>
+                                </p>
+                                <a href="#" class="btn btn-success btn-sm" style="float: right"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

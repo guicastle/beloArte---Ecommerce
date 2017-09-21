@@ -89,7 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
-    <Content Include="Content\icons\icon-1001596_960_720.png" />
+    <Content Include="Content\icons\cart.png" />
     <Content Include="Content\icons\logo.png" />
     <Content Include="Content\icons\cart-shop.png" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\PaginaController.cs" />
+    <Compile Include="Controllers\Produto\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -119,6 +120,8 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Pagina\Index.cshtml" />
+    <Content Include="Views\Produto\Produto.cshtml" />
+    <Content Include="Views\_Navbar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -137,10 +140,6 @@
     <ProjectReference Include="..\beloArte.Domain\beloArte.Domain.csproj">
       <Project>{b07f78c9-7cbb-4db0-9ec2-25fd9f78652e}</Project>
       <Name>beloArte.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\beloArte.Infra\beloArte.Infra.csproj">
-      <Project>{754d7a32-c539-4c72-95e6-49f8af1f95cf}</Project>
-      <Name>beloArte.Infra</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
