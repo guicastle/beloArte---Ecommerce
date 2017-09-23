@@ -17,5 +17,79 @@
 <body>
     @RenderPage("~/Views/_Navbar.cshtml")
 
+    <hr />
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h4>
+                    Fale Conosco - <small>Sua opnião é muito importante para nós.</small>
+                </h4>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-10">
+                <div class="well well-sm" style="background: whitesmoke;padding: 2%;">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">
+                                        Nome
+                                    </label>
+                                    <input type="text" class="form-control" id="name" placeholder="Nome Completo" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">
+                                        Email
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-envelope"></span>
+                                        </span>
+                                        <input type="email" class="form-control" id="email" placeholder="exemplo@gmail.com" required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">
+                                        Motivo
+                                    </label>
+                                    <select id="subject" name="subject" class="form-control" required="required">
+                                        <option value="na" selected="">Selecione o motivo:</option>
+                                        <option value="elogio">Elogio</option>
+                                        <option value="sugestao">Sugestão</option>
+                                        <option value="suporte">Suporte Técnico</option>
+                                        <option value="critica">Crítica</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">
+                                        Mensagem
+                                    </label>
+                                    <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required" placeholder="Message" style="margin-top: 0px; margin-bottom: 0px; height: 235px;"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                                    Enviar Mensagem
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-right text-white">Copyright © beloArte 2017</p>
+        </div>
+    </footer>
+
+
 </body>
 </html>
