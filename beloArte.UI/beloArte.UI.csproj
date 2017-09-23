@@ -109,6 +109,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Carrinho\CarrinhoController.cs" />
+    <Compile Include="Controllers\Feedback\FeedbackController.cs" />
     <Compile Include="Controllers\PaginaController.cs" />
     <Compile Include="Controllers\Produto\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -122,6 +124,8 @@
     <Content Include="Views\Pagina\Index.cshtml" />
     <Content Include="Views\Produto\Produto.cshtml" />
     <Content Include="Views\_Navbar.cshtml" />
+    <Content Include="Views\Feedback\EnviarOpniao.cshtml" />
+    <Content Include="Views\Carrinho\ProdutosAdd.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -131,6 +135,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Checkout\" />
+    <Folder Include="Controllers\Login\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\beloArte.BLL\beloArte.BLL.csproj">
