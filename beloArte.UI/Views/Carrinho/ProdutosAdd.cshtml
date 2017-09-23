@@ -1,0 +1,112 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1. shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="~/Content/icons/logo.png" type="image/x-icon" />
+
+    <title>Finalizar Compra</title>
+
+</head>
+<body>
+    @RenderPage("~/Views/_Navbar.cshtml")
+
+    <hr />
+    <div class="container-fluid">
+        <div class="row">
+            <br />
+            <div class="col-md-12 row">                
+                <div class="col-md-8 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center"><h4>Produtos Adicionados</h4></div>
+                        <div class="panel-body">
+                            <table class="table borderless">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                        <td class="col-md-3"><strong>Valor</strong></td>
+                                        <td><strong>Qtd.</strong></td>
+                                        <td><strong>Total</strong></td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- foreach  -->
+                                    <tr>
+                                        <td class="col-md-3">
+                                            <div class="media">
+                                                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="https://i.pinimg.com/736x/0f/82/19/0f8219c0c0b498c6b0a50cf1753a1214--tapas-hand-made.jpg" style="width: 72px; height: 72px;"> </a>
+                                                <div class="media-body" style="margin-left: 3%;">
+                                                    <h5 class="media-heading"> Titulo do Produto</h5>
+                                                    <h5 class="media-heading"> Artesão </h5>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">R$10,99</td>
+                                        <td class="text-center">3</td>
+                                        <td class="text-right">R$32,99</td>
+                                        <td class="text-right"><button type="button" class="btn btn-danger">Remover</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-md-3">
+                                            <div class="media">
+                                                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="https://www.artesanatopassoapassoja.com.br/wp-content/uploads/2017/03/Sugest%C3%B5es-de-Artesanato-com-Folhas-de-Revista-17.jpg" style="width: 72px; height: 72px;"> </a>
+                                                <div class="media-body" style="margin-left: 3%;">
+                                                    <h5 class="media-heading"> Titulo do Produto</h5>
+                                                    <h5 class="media-heading"> Artesão </h5>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">R$10,99</td>
+                                        <td class="text-center">2</td>
+                                        <td class="text-right"> R$22,99</td>
+                                        <td class="text-right"><button type="button" class="btn btn-danger">Remover</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valores dos produtos-->
+                <div class="col-md-4 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center">
+                            <h4>À Pagar</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-md-12">
+                                <strong>Subtotal: </strong>
+                                <div class="pull-right"><span>R$</span><span>55,98</span></div>
+                            </div>
+                            <div class="col-md-12">
+                                <strong>Frete: </strong>
+                                <div class="pull-right"><span>R$</span><span>19,90</span></div>
+                                <hr>
+                            </div>
+                            <div class="col-md-12">
+                                <strong>Valor Total: </strong>
+                                <div class="pull-right"><span>R$</span><span>75,88</span></div>
+                                <hr>
+                            </div>
+
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Finalizar Compra</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
