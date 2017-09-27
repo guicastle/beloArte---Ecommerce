@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -89,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
+    <Content Include="Content\css\footer-style.css" />
     <Content Include="Content\icons\cart.png" />
     <Content Include="Content\icons\logo.png" />
     <Content Include="Content\icons\cart-shop.png" />
@@ -98,8 +100,12 @@
     <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.min.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\font-awesome.min.css" />
+    <Content Include="Content\vendor\bootstrap\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\vendor\jquery\dist\jquery.mask.js" />
+    <Content Include="Content\vendor\jquery\dist\jquery.mask.min.js" />
     <Content Include="Content\vendor\popper\popper.js" />
     <Content Include="Content\vendor\popper\popper.min.js" />
     <Content Include="Content\vendor\jquery\jquery.js" />
@@ -110,6 +116,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Carrinho\CarrinhoController.cs" />
+    <Compile Include="Controllers\Checkout\CheckoutController.cs" />
     <Compile Include="Controllers\Feedback\FeedbackController.cs" />
     <Compile Include="Controllers\PaginaController.cs" />
     <Compile Include="Controllers\Produto\ProdutoController.cs" />
@@ -124,8 +131,21 @@
     <Content Include="Views\Pagina\Index.cshtml" />
     <Content Include="Views\Produto\Produto.cshtml" />
     <Content Include="Views\_Navbar.cshtml" />
-    <Content Include="Views\Feedback\EnviarOpniao.cshtml" />
+    <Content Include="Views\Feedback\Mensagem.cshtml" />
     <Content Include="Views\Carrinho\ProdutosAdd.cshtml" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\Checkout\PassosFinais.cshtml" />
+    <Content Include="Content\vendor\bootstrap\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\vendor\bootstrap\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\vendor\bootstrap\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\vendor\bootstrap\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\vendor\bootstrap\fonts\FontAwesome.otf.otf" />
+    <Content Include="Views\_Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -135,7 +155,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Checkout\" />
     <Folder Include="Controllers\Login\" />
   </ItemGroup>
   <ItemGroup>

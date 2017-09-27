@@ -1950,8 +1950,8 @@ var modifiers = {
    * @inner
    */
   offset: {
-    /** @prop {number} order=200 - Index used to define the order of execution */
-    order: 200,
+    /** @prop {number} order=300 - Index used to define the order of execution */
+    order: 300,
     /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
     enabled: true,
     /** @prop {ModifierFn} */

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace beloArte.UI.Controllers.Feedback
+namespace beloArte.UI.Controllers.Checkout
 {
-    public class FeedbackController : Controller
+    public class CheckoutController : Controller
     {
-        // GET: Feedback
-        public ActionResult Mensagem()
+        // GET: Checkout
+        public ActionResult PassosFinais()
         {
             return View();
         }
