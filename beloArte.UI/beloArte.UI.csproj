@@ -91,9 +91,20 @@
   <ItemGroup>
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\css\footer-style.css" />
-    <Content Include="Content\icons\cart.png" />
+    <Content Include="Content\icons\icons-cart-shop\cart-shop-128p128.png" />
+    <Content Include="Content\icons\icons-cart-shop\cart-shop-16p16.png" />
+    <Content Include="Content\icons\icons-cart-shop\cart-shop-24p24.png" />
+    <Content Include="Content\icons\icons-cart-shop\cart-shop-36p36.png" />
+    <Content Include="Content\icons\icons-cart-shop\cart-shop-48p48.png" />
+    <Content Include="Content\icons\icons-cart-shop\cart-shop-64p64.png" />
+    <Content Include="Content\icons\icons-cart-shop\cart-shop-8p8.png" />
+    <Content Include="Content\icons\icons-logo\logo-100p60.png" />
+    <Content Include="Content\icons\icons-logo\logo-90p54.png" />
+    <Content Include="Content\icons\icons-logo\logo-92p55.png" />
+    <Content Include="Content\icons\icons-logo\logo-95p57.png" />
+    <Content Include="Content\icons\icons-logo\logo.png" />
+    <Content Include="Content\icons\icons-logo\logo130p80.png" />
     <Content Include="Content\icons\logo.png" />
-    <Content Include="Content\icons\cart-shop.png" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -111,12 +122,14 @@
     <Content Include="Content\vendor\jquery\jquery.js" />
     <Content Include="Content\vendor\jquery\jquery.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\viacep.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Carrinho\CarrinhoController.cs" />
     <Compile Include="Controllers\Checkout\CheckoutController.cs" />
+    <Compile Include="Controllers\Cliente\ClienteController.cs" />
     <Compile Include="Controllers\Feedback\FeedbackController.cs" />
     <Compile Include="Controllers\PaginaController.cs" />
     <Compile Include="Controllers\Produto\ProdutoController.cs" />
@@ -146,6 +159,7 @@
     <Content Include="Content\vendor\bootstrap\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\vendor\bootstrap\fonts\FontAwesome.otf.otf" />
     <Content Include="Views\_Footer.cshtml" />
+    <Content Include="Views\Cliente\Cadastrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

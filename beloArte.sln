@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - beloArte.Domain", "4 - beloArte.Domain", "{5572A5E3-9EF7-431E-94A9-1F2633D4186A}"
 EndProject
@@ -59,5 +59,8 @@ Global
 		{CE0B9188-86FA-4DED-B9B1-4C9BB1746707} = {3B5D59DC-2203-466C-BD71-2600FF940DC0}
 		{754D7A32-C539-4C72-95E6-49F8AF1F95CF} = {01F71BBC-0720-4DAB-8ED7-8872C89A3E74}
 		{9461E704-B1C3-4282-8AEF-4CB3B983FCEA} = {F270676D-85AE-4204-A129-E1B8C310B131}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0DA8E86-E80E-4D2A-836D-1ABF375161D7}
 	EndGlobalSection
 EndGlobal

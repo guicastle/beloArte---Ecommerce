@@ -87,6 +87,7 @@
                 </div>
             </div>
             <div class="tab-content col-md-12">
+                <!-- Aba Informações do Cliente -->
                 <div id="infoCliente" class="tab-pane fade active in show">
                     <h3>Informações do Cliente</h3>
                     <p>Só alguns dados, é rapidinho.</p>
@@ -119,18 +120,17 @@
                             <label class="radio-inline" style="font-weight: 200;">
                                 <input type="radio" name="sexo" id="masculino" value="MASCULINO"> Masculino
                             </label>
-
                             <label class="radio-inline" style="font-weight: 200;">
                                 <input type="radio" name="sexo" id="feminino" value="FEMININO"> Feminino
                             </label>
-
                         </div>
                     </div>
-
                     <ul class="list-unstyled list-inline pull-right">
                         <li><button type="button" class="btn btn-info next-step">Proximo <i class="fa fa-chevron-right"></i></button></li>
                     </ul>
                 </div>
+
+                <!-- Aba Endereço de Entrega -->
                 <div id="endEntrega" class="tab-pane fade">
                     <h3>Endereço de Entrega</h3>
                     <p>Para onde você quer que entregue?</p>
@@ -284,17 +284,21 @@
 
 
             $("#infoCliente :input").blur(function () {
+                var validaBotao = $('#btnInfoCliente').hasClass('btn-success');                
+
                 if (validaAbaCliente() == true) {
                     $('#btnInfoCliente').removeClass('btn-info').addClass('btn-success');
-                } else {
+                } else if (validaBotao == true) {
                     $('#btnInfoCliente').removeClass('btn-success').addClass('btn-info');
                 } 
             });
 
             $("#endEntrega :input").blur(function () {
+                var validaBotao = $('#btnEndereco').hasClass('btn-success');
+
                 if (validaAbaEndereco() == true) {
                     $('#btnEndereco').removeClass('btn-info').addClass('btn-success');
-                } else {
+                } else if (validaBotao == true) {
                     $('#btnEndereco').removeClass('btn-success').addClass('btn-info');
                 } 
 

@@ -1,0 +1,168 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width. initial-scale=1. shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="~/Content/icons/logo.png" type="image/x-icon" />
+
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/Site.css" rel="stylesheet" />
+    <link href="~/Content/vendor/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+
+    <title>Cadastre aqui!</title>
+</head>
+<body>
+    @RenderPage("~/Views/_Navbar.cshtml")
+
+    <hr />
+    <div class="container">
+        <h4>Informações do Usuario</h4>
+        <p>Dados para acesso.</p>
+
+        <div class="form-group row">
+            <div class="col-md-5">
+                <label for="nome" style="font-weight: 200;">* Usuario</label>
+                <input type="text" class="form-control" id="nome" placeholder="Exemplo: JoseMarques" name="nome">
+            </div>
+            <div class="col-md-5">
+                <label for="email" style="font-weight: 200;">* Senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="Sua senha deve conter letras e números." name="email">
+            </div>
+        </div>
+
+        <hr />
+        <h4>Informações Pessoais</h4>
+        <p>Só alguns dados, é rapidinho.</p>
+
+        <div class="form-group row">
+            <div class="col-md-5">
+                <label for="nome" style="font-weight: 200;">* Nome Completo</label>
+                <input type="text" class="form-control" id="nome" placeholder="Exemplo: José Marques da Silva" name="nome">
+            </div>
+            <div class="col-md-5">
+                <label for="email" style="font-weight: 200;">* Email</label>
+                <input type="email" class="form-control" id="email" placeholder="example@gmail.com" name="email">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-5">
+
+                <label for="sexo" style="font-weight: 200;">* Sexo</label><div class="col-md-12" style="padding-left: 0;margin-top: 1.7%;">
+
+                    <label class="radio-inline" style="font-weight: 200;">
+                        <input type="radio" name="sexo" id="masculino" value="MASCULINO"> Masculino
+                    </label>
+                    <label class="radio-inline" style="font-weight: 200;">
+                        <input type="radio" name="sexo" id="feminino" value="FEMININO"> Feminino
+                    </label>
+                </div>
+            </div><div class="col-md-5">
+                <label for="cpf" style="font-weight: 200;">CPF (Opcional)</label>
+                <input type="text" class="form-control" id="cpf" placeholder="Exemplo: 111.222.333-44" name="cpf">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-5">
+                <label for="tel" style="font-weight: 200;">Telefone (Opcional)</label>
+                <input type="tel" class="form-control" id="tel" placeholder="(31) 99999-9999" name="tel">
+            </div>
+            <div class="col-md-5">
+                <label for="dtnasc" style="font-weight: 200;">Data de Nascimento (Opcional)</label>
+                <input class="form-control" id="dtnasc" placeholder="05/01/1996" name="dtnasc">
+            </div>
+        </div>
+        
+        <hr />
+        <h4>Endereço Pessoal</h4>
+        <p>Para que seja rapido sua compra, salve seus dados de endereço. ;)</p>
+
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label style="font-weight: 200;">CEP (Opcional)</label>
+                <input type="text" class="form-control" id="cep" placeholder="30888-298" name="cep">
+                <small>
+                    <a href="http://www.buscacep.correios.com.br/servicos/dnec/index.do" target="_blank">Não sei meu CEP</a>
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-5">
+                <label style="font-weight: 200;">Endereço (Opcional)</label>
+                <input type="text" class="form-control" id="rua" placeholder="Exemplo: Rua São Cristovão da Silva" name="endereco">
+            </div>
+            <div class="col-md-3">
+                <label style="font-weight: 200;">Número (Opcional)</label>
+                <input type="number" class="form-control" id="numero" placeholder="007" name="numero">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-5">
+                <label style="font-weight: 200;">Cidade (Opcional)</label>
+                <input type="text" class="form-control" id="cidade" placeholder="Exemplo: Belo Horizonte" name="cidade">
+            </div>
+            <div class="col-md-5">
+                <label style="font-weight: 200;">Estado (Opcional)</label>
+                <input type="text" class="form-control" id="uf" placeholder="Exemplo: Minas Gerais" name="estado">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-5">
+                <label style="font-weight: 200;">Bairro (Opcional)</label>
+                <input type="text" class="form-control" id="bairro" placeholder="Exemplo: Centro" name="bairro">
+            </div>
+            <div class="col-md-5">
+                <label style="font-weight: 200;">Complemento (Opcional)</label>
+                <input type="text" class="form-control" id="complemento" placeholder="Exemplo: apt 501 (opcional)" name="complemento">
+            </div>
+        </div>
+
+        <!-- Botão de Salvar Cliente -->
+        <div class="row">
+            <div class="col-md-10 col-md-offset-3">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-success next-step">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    @RenderPage("~/Views/_Footer.cshtml")
+
+    <!-- /Scripts -->
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/popper/popper.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/vendor/jquery/dist/jquery.mask.min.js"></script>
+    <script src="~/Scripts/viacep.js"></script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function ($) {
+            aplicarMascaras();
+        });
+
+        function aplicarMascaras() {
+            $('#tel').mask('(00) 99999-9999');
+            $('#dtnasc').mask('00/00/0000');
+            $('#cep').mask('00000-000');
+
+        }
+
+    </script>
+
+</body>
+</html>
