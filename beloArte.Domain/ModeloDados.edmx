@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BeloArtEcommerceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BA_CLIENTE">
+          <Key>
+            <PropertyRef Name="CODCLIENTE" />
+          </Key>
+          <Property Name="CODCLIENTE" Type="int" Nullable="false" />
+          <Property Name="NOME" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SEXO" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CPF" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="TELEFONE" Type="nvarchar" MaxLength="20" />
+          <Property Name="DTNASCIMENTO" Type="date" />
+        </EntityType>
+        <EntityType Name="BA_ENDERECO">
+          <Key>
+            <PropertyRef Name="CODENDERECO" />
+          </Key>
+          <Property Name="CODENDERECO" Type="int" Nullable="false" />
+          <Property Name="ENDERECO" Type="nvarchar" MaxLength="100" />
+          <Property Name="NUMERO" Type="nvarchar" MaxLength="20" />
+          <Property Name="CIDADE" Type="nvarchar" MaxLength="100" />
+          <Property Name="ESTADO" Type="nvarchar" MaxLength="50" />
+          <Property Name="BAIRRO" Type="nvarchar" MaxLength="100" />
+          <Property Name="COMPLEMENTO" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="BA_USUARIO">
+          <Key>
+            <PropertyRef Name="CODUSUARIO" />
+          </Key>
+          <Property Name="CODUSUARIO" Type="int" Nullable="false" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="SENHA" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="CPF" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DTNASCIMENTO" Type="varchar" MaxLength="8" />
+          <Property Name="TIPOUSUARIO" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BeloArtEcommerceModelStoreContainer">
+          <EntitySet Name="BA_CLIENTE" EntityType="Self.BA_CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BA_ENDERECO" EntityType="Self.BA_ENDERECO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BA_USUARIO" EntityType="Self.BA_USUARIO" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BeloArtEcommerceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BA_CLIENTE">
+          <Key>
+            <PropertyRef Name="CODCLIENTE" />
+          </Key>
+          <Property Name="CODCLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="NOME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SEXO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CPF" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DTNASCIMENTO" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="BA_ENDERECO">
+          <Key>
+            <PropertyRef Name="CODENDERECO" />
+          </Key>
+          <Property Name="CODENDERECO" Type="Int32" Nullable="false" />
+          <Property Name="ENDERECO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NUMERO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CIDADE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BAIRRO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="COMPLEMENTO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BA_USUARIO">
+          <Key>
+            <PropertyRef Name="CODUSUARIO" />
+          </Key>
+          <Property Name="CODUSUARIO" Type="Int32" Nullable="false" />
+          <Property Name="USUARIO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SENHA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CPF" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DTNASCIMENTO" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="TIPOUSUARIO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModeloEntidades" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BA_CLIENTE" EntityType="Self.BA_CLIENTE" />
+          <EntitySet Name="BA_ENDERECO" EntityType="Self.BA_ENDERECO" />
+          <EntitySet Name="BA_USUARIO" EntityType="Self.BA_USUARIO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BeloArtEcommerceModelStoreContainer" CdmEntityContainer="ModeloEntidades">
+          <EntitySetMapping Name="BA_CLIENTE">
+            <EntityTypeMapping TypeName="BeloArtEcommerceModel.BA_CLIENTE">
+              <MappingFragment StoreEntitySet="BA_CLIENTE">
+                <ScalarProperty Name="CODCLIENTE" ColumnName="CODCLIENTE" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+                <ScalarProperty Name="DTNASCIMENTO" ColumnName="DTNASCIMENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BA_ENDERECO">
+            <EntityTypeMapping TypeName="BeloArtEcommerceModel.BA_ENDERECO">
+              <MappingFragment StoreEntitySet="BA_ENDERECO">
+                <ScalarProperty Name="CODENDERECO" ColumnName="CODENDERECO" />
+                <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+                <ScalarProperty Name="NUMERO" ColumnName="NUMERO" />
+                <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+                <ScalarProperty Name="COMPLEMENTO" ColumnName="COMPLEMENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BA_USUARIO">
+            <EntityTypeMapping TypeName="BeloArtEcommerceModel.BA_USUARIO">
+              <MappingFragment StoreEntitySet="BA_USUARIO">
+                <ScalarProperty Name="CODUSUARIO" ColumnName="CODUSUARIO" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="SENHA" ColumnName="SENHA" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="DTNASCIMENTO" ColumnName="DTNASCIMENTO" />
+                <ScalarProperty Name="TIPOUSUARIO" ColumnName="TIPOUSUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

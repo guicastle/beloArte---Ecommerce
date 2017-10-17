@@ -56,5 +56,10 @@
       <Name>beloArte.Infra</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClienteBLL\" />
+    <Folder Include="EnderecoBLL\" />
+    <Folder Include="UsuarioBLL\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

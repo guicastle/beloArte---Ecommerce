@@ -59,5 +59,10 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClienteDAL\" />
+    <Folder Include="EnderecoDAL\" />
+    <Folder Include="UsuarioDAL\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
