@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{429671BD-340C-42BA-BBBC-AF6A6C26233E}</ProjectGuid>
+    <ProjectGuid>{B8D25D69-FA6E-40E6-8E8A-4FBB04AF020D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>beloArte.BLL</RootNamespace>
     <AssemblyName>beloArte.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,13 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteBLL\ClienteBLL.cs" />
+    <Compile Include="EnderecoBLL\EnderecoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioBLL\UsuarioBLL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\beloArte.DAL\beloArte.DAL.csproj">
-      <Project>{ce0b9188-86fa-4ded-b9b1-4c9bb1746707}</Project>
-      <Name>beloArte.DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\beloArte.Domain\beloArte.Domain.csproj">
       <Project>{b07f78c9-7cbb-4db0-9ec2-25fd9f78652e}</Project>
       <Name>beloArte.Domain</Name>
@@ -55,11 +55,6 @@
       <Project>{754d7a32-c539-4c72-95e6-49f8af1f95cf}</Project>
       <Name>beloArte.Infra</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ClienteBLL\" />
-    <Folder Include="EnderecoBLL\" />
-    <Folder Include="UsuarioBLL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

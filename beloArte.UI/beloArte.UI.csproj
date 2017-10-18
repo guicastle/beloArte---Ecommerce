@@ -123,7 +123,9 @@
     <Content Include="Content\vendor\jquery\jquery.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\viacep.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -139,7 +141,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="Views\Pagina\Index.cshtml" />
     <Content Include="Views\Produto\Produto.cshtml" />
@@ -173,13 +177,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\beloArte.BLL\beloArte.BLL.csproj">
-      <Project>{429671bd-340c-42ba-bbbc-af6a6c26233e}</Project>
+      <Project>{b8d25d69-fa6e-40e6-8e8a-4fbb04af020d}</Project>
       <Name>beloArte.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\beloArte.Domain\beloArte.Domain.csproj">
       <Project>{b07f78c9-7cbb-4db0-9ec2-25fd9f78652e}</Project>
       <Name>beloArte.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -21,5 +21,8 @@ namespace beloArte.Domain
         public string CPF { get; set; }
         public string DTNASCIMENTO { get; set; }
         public string TIPOUSUARIO { get; set; }
+        public Nullable<int> CODCLIENTE { get; set; }
+    
+        public virtual BA_CLIENTE BA_CLIENTE { get; set; }
     }
 }

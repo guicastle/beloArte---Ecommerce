@@ -5,9 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="222d337f59194d4fb84d6404ee46f359" Name="Diagram1">
-        <EntityTypeShape EntityType="BeloArtEcommerceModel.BA_CLIENTE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BeloArtEcommerceModel.BA_ENDERECO" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BeloArtEcommerceModel.BA_USUARIO" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeloArtEcommerceModel.BA_CLIENTE" Width="1.5" PointX="3.25" PointY="1.5" />
+        <EntityTypeShape EntityType="BeloArtEcommerceModel.BA_ENDERECO" Width="1.5" PointX="5.75" PointY="3.125" />
+        <EntityTypeShape EntityType="BeloArtEcommerceModel.BA_USUARIO" Width="1.5" PointX="0.75" PointY="3.125" />
+        <AssociationConnector Association="BeloArtEcommerceModel.FK_CODCLIENTE_ENDERECO" />
+        <AssociationConnector Association="BeloArtEcommerceModel.FK_CODCLIENTE_USUARIO" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

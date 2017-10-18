@@ -21,5 +21,8 @@ namespace beloArte.Domain
         public string ESTADO { get; set; }
         public string BAIRRO { get; set; }
         public string COMPLEMENTO { get; set; }
+        public Nullable<int> CODCLIENTE { get; set; }
+    
+        public virtual BA_CLIENTE BA_CLIENTE { get; set; }
     }
 }
