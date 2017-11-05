@@ -19,7 +19,7 @@ namespace beloArte.Domain
         public string SENHA { get; set; }
         public string EMAIL { get; set; }
         public string CPF { get; set; }
-        public string DTNASCIMENTO { get; set; }
+        public Nullable<System.DateTime> DTNASCIMENTO { get; set; }
         public string TIPOUSUARIO { get; set; }
         public Nullable<int> CODCLIENTE { get; set; }
     

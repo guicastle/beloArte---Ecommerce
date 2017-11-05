@@ -1,0 +1,186 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Nossos Produtos</title>
+    <link rel="icon" href="~/Content/icons/logo.png" type="image/x-icon" />
+
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/Site.css" rel="stylesheet" />
+    <link href="~/Content/vendor/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'open sans';
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .preview {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .preview-pic {
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+        }
+
+        .preview-thumbnail.nav-tabs {
+            border: none;
+            margin-top: 15px;
+        }
+
+            .preview-thumbnail.nav-tabs li {
+                width: 18%;
+                margin-right: 2.5%;
+            }
+
+                .preview-thumbnail.nav-tabs li img {
+                    max-width: 100%;
+                    display: block;
+                }
+
+                .preview-thumbnail.nav-tabs li a {
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .preview-thumbnail.nav-tabs li:last-of-type {
+                    margin-right: 0;
+                }
+
+        .tab-content {
+            overflow: hidden;
+        }
+
+            .tab-content img {
+                width: 100%;
+                -webkit-animation-name: opacity;
+                animation-name: opacity;
+                -webkit-animation-duration: .3s;
+                animation-duration: .3s;
+            }
+
+        .card {
+            margin-top: 50px;
+            background: #eee;
+            padding: 3em;
+            line-height: 1.5em;
+        }
+
+        .details {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .product-title, .price {
+            font-weight: bold;
+        }
+
+        .product-title, .rating, .product-description, .price, .vote {
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            margin-top: 0;
+        }
+
+        .add-to-cart, .like {
+            background: #ff9f1a;
+            padding: 1.2em 1.5em;
+            border: none;
+            font-weight: bold;
+            color: #fff;
+            -webkit-transition: background .3s ease;
+            transition: background .3s ease;
+        }
+            .add-to-cart:hover, .like:hover {
+                background: #b36800;
+                color: #fff;
+            }
+
+        .tooltip-inner {
+            padding: 1.3em;
+        }
+    </style>
+
+</head>
+<body>
+    @RenderPage("~/Views/_Navbar.cshtml")
+
+    <div class="container">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
+
+                        <div class="preview-pic tab-content">
+                            <!--Recomendavel 400px252 -->
+                            <div class="tab-pane active" id="pic-1"><img src="https://i.pinimg.com/736x/0f/82/19/0f8219c0c0b498c6b0a50cf1753a1214--tapas-hand-made.jpg" /></div>
+                            <div class="tab-pane" id="pic-2"><img src="https://s-media-cache-ak0.pinimg.com/originals/d9/cc/65/d9cc65af8eb9447a0f494e9bc273f9fc.jpg" /></div>
+                            <div class="tab-pane" id="pic-3"><img src="" /></div>
+                            <div class="tab-pane" id="pic-4"><img src="" /></div>
+                            <div class="tab-pane" id="pic-5"><img src="" /></div>
+                        </div>
+                        <ul class="preview-thumbnail nav nav-tabs">
+                            <!--Recomendavel 200px126 -->
+                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="https://i.pinimg.com/736x/0f/82/19/0f8219c0c0b498c6b0a50cf1753a1214--tapas-hand-made.jpg" /></a></li>
+                            <li><a data-target="#pic-2" data-toggle="tab"><img src="https://s-media-cache-ak0.pinimg.com/originals/d9/cc/65/d9cc65af8eb9447a0f494e9bc273f9fc.jpg" /></a></li>
+                            <li><a data-target="#pic-3" data-toggle="tab"><img src="" /></a></li>
+                            <li><a data-target="#pic-4" data-toggle="tab"><img src="" /></a></li>
+                            <li><a data-target="#pic-5" data-toggle="tab"><img src="" /></a></li>
+                        </ul>
+
+                    </div>
+                    <div class="details col-md-6">
+                        <h3 class="product-title">Titulo do Produto</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <span class="review-no">41 visualizações</span>
+                        </div>
+                        <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
+                        <h4 class="price">Preço Unitario: <span>R$80</span></h4>                        
+                        <div class="action">
+                            <button class="add-to-cart btn btn-primary" type="button">Adicionar no carrinho</button>
+                            <button class="like btn btn-primary" type="button"><span class="fa fa-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Scripts -->
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/popper/popper.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

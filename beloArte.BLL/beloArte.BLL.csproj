@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>beloArte.BLL</RootNamespace>
     <AssemblyName>beloArte.BLL</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -43,10 +43,15 @@
   <ItemGroup>
     <Compile Include="ClienteBLL\ClienteBLL.cs" />
     <Compile Include="EnderecoBLL\EnderecoBLL.cs" />
+    <Compile Include="ProdutoBLL\ProdutoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioBLL\UsuarioBLL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\beloArte.DAL\beloArte.DAL.csproj">
+      <Project>{ba26247f-361f-4d45-a2b4-2cce64a4d4c3}</Project>
+      <Name>beloArte.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\beloArte.Domain\beloArte.Domain.csproj">
       <Project>{b07f78c9-7cbb-4db0-9ec2-25fd9f78652e}</Project>
       <Name>beloArte.Domain</Name>

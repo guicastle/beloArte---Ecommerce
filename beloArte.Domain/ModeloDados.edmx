@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BeloArtEcommerceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ModeloDados.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BA_CLIENTE">
           <Key>
             <PropertyRef Name="CODCLIENTE" />
@@ -13,7 +13,7 @@
           <Property Name="NOME" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="EMAIL" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="SEXO" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="CPF" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CPF" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="TELEFONE" Type="nvarchar" MaxLength="20" />
           <Property Name="DTNASCIMENTO" Type="date" />
         </EntityType>
@@ -30,6 +30,17 @@
           <Property Name="COMPLEMENTO" Type="nvarchar" MaxLength="100" />
           <Property Name="CODCLIENTE" Type="int" />
         </EntityType>
+        <EntityType Name="BA_PRODUTO">
+          <Key>
+            <PropertyRef Name="CODPRODUTO" />
+          </Key>
+          <Property Name="CODPRODUTO" Type="int" Nullable="false" />
+          <Property Name="IMG" Type="nvarchar" MaxLength="400" />
+          <Property Name="TITULO" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="DESCRICAO" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="VALOR" Type="float" Nullable="false" />
+          <Property Name="CATEGORIA" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="BA_USUARIO">
           <Key>
             <PropertyRef Name="CODUSUARIO" />
@@ -38,8 +49,8 @@
           <Property Name="USUARIO" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="SENHA" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="EMAIL" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="CPF" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="DTNASCIMENTO" Type="varchar" MaxLength="8" />
+          <Property Name="CPF" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DTNASCIMENTO" Type="date" />
           <Property Name="TIPOUSUARIO" Type="varchar" MaxLength="1" Nullable="false" />
           <Property Name="CODCLIENTE" Type="int" />
         </EntityType>
@@ -67,9 +78,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BeloArtEcommerceModelStoreContainer">
+        <EntityContainer Name="ModeloDadosStoreContainer">
           <EntitySet Name="BA_CLIENTE" EntityType="Self.BA_CLIENTE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BA_ENDERECO" EntityType="Self.BA_ENDERECO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BA_PRODUTO" EntityType="Self.BA_PRODUTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BA_USUARIO" EntityType="Self.BA_USUARIO" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CODCLIENTE_ENDERECO" Association="Self.FK_CODCLIENTE_ENDERECO">
             <End Role="BA_CLIENTE" EntitySet="BA_CLIENTE" />
@@ -83,19 +95,20 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BeloArtEcommerceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="ModeloEntidades" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BA_CLIENTE" EntityType="BeloArtEcommerceModel.BA_CLIENTE" />
-          <EntitySet Name="BA_ENDERECO" EntityType="BeloArtEcommerceModel.BA_ENDERECO" />
-          <EntitySet Name="BA_USUARIO" EntityType="BeloArtEcommerceModel.BA_USUARIO" />
-          <AssociationSet Name="FK_CODCLIENTE_ENDERECO" Association="BeloArtEcommerceModel.FK_CODCLIENTE_ENDERECO">
+      <Schema Namespace="ModeloDados" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Context" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BA_CLIENTE" EntityType="ModeloDados.BA_CLIENTE" />
+          <EntitySet Name="BA_ENDERECO" EntityType="ModeloDados.BA_ENDERECO" />
+          <EntitySet Name="BA_USUARIO" EntityType="ModeloDados.BA_USUARIO" />
+          <AssociationSet Name="FK_CODCLIENTE_ENDERECO" Association="ModeloDados.FK_CODCLIENTE_ENDERECO">
             <End Role="BA_CLIENTE" EntitySet="BA_CLIENTE" />
             <End Role="BA_ENDERECO" EntitySet="BA_ENDERECO" />
           </AssociationSet>
-          <AssociationSet Name="FK_CODCLIENTE_USUARIO" Association="BeloArtEcommerceModel.FK_CODCLIENTE_USUARIO">
+          <AssociationSet Name="FK_CODCLIENTE_USUARIO" Association="ModeloDados.FK_CODCLIENTE_USUARIO">
             <End Role="BA_CLIENTE" EntitySet="BA_CLIENTE" />
             <End Role="BA_USUARIO" EntitySet="BA_USUARIO" />
           </AssociationSet>
+          <EntitySet Name="BA_PRODUTO" EntityType="ModeloDados.BA_PRODUTO" />
         </EntityContainer>
         <EntityType Name="BA_CLIENTE">
           <Key>
@@ -105,11 +118,11 @@
           <Property Name="NOME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="SEXO" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="CPF" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CPF" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="TELEFONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="DTNASCIMENTO" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="BA_ENDERECO" Relationship="BeloArtEcommerceModel.FK_CODCLIENTE_ENDERECO" FromRole="BA_CLIENTE" ToRole="BA_ENDERECO" />
-          <NavigationProperty Name="BA_USUARIO" Relationship="BeloArtEcommerceModel.FK_CODCLIENTE_USUARIO" FromRole="BA_CLIENTE" ToRole="BA_USUARIO" />
+          <NavigationProperty Name="BA_ENDERECO" Relationship="ModeloDados.FK_CODCLIENTE_ENDERECO" FromRole="BA_CLIENTE" ToRole="BA_ENDERECO" />
+          <NavigationProperty Name="BA_USUARIO" Relationship="ModeloDados.FK_CODCLIENTE_USUARIO" FromRole="BA_CLIENTE" ToRole="BA_USUARIO" />
         </EntityType>
         <EntityType Name="BA_ENDERECO">
           <Key>
@@ -123,7 +136,7 @@
           <Property Name="BAIRRO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="COMPLEMENTO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="CODCLIENTE" Type="Int32" />
-          <NavigationProperty Name="BA_CLIENTE" Relationship="BeloArtEcommerceModel.FK_CODCLIENTE_ENDERECO" FromRole="BA_ENDERECO" ToRole="BA_CLIENTE" />
+          <NavigationProperty Name="BA_CLIENTE" Relationship="ModeloDados.FK_CODCLIENTE_ENDERECO" FromRole="BA_ENDERECO" ToRole="BA_CLIENTE" />
         </EntityType>
         <EntityType Name="BA_USUARIO">
           <Key>
@@ -133,15 +146,15 @@
           <Property Name="USUARIO" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="SENHA" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="CPF" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="DTNASCIMENTO" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CPF" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DTNASCIMENTO" Type="DateTime" Precision="0" />
           <Property Name="TIPOUSUARIO" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="CODCLIENTE" Type="Int32" />
-          <NavigationProperty Name="BA_CLIENTE" Relationship="BeloArtEcommerceModel.FK_CODCLIENTE_USUARIO" FromRole="BA_USUARIO" ToRole="BA_CLIENTE" />
+          <NavigationProperty Name="BA_CLIENTE" Relationship="ModeloDados.FK_CODCLIENTE_USUARIO" FromRole="BA_USUARIO" ToRole="BA_CLIENTE" />
         </EntityType>
         <Association Name="FK_CODCLIENTE_ENDERECO">
-          <End Type="BeloArtEcommerceModel.BA_CLIENTE" Role="BA_CLIENTE" Multiplicity="0..1" />
-          <End Type="BeloArtEcommerceModel.BA_ENDERECO" Role="BA_ENDERECO" Multiplicity="*" />
+          <End Type="ModeloDados.BA_CLIENTE" Role="BA_CLIENTE" Multiplicity="0..1" />
+          <End Type="ModeloDados.BA_ENDERECO" Role="BA_ENDERECO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BA_CLIENTE">
               <PropertyRef Name="CODCLIENTE" />
@@ -152,8 +165,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CODCLIENTE_USUARIO">
-          <End Type="BeloArtEcommerceModel.BA_CLIENTE" Role="BA_CLIENTE" Multiplicity="0..1" />
-          <End Type="BeloArtEcommerceModel.BA_USUARIO" Role="BA_USUARIO" Multiplicity="*" />
+          <End Type="ModeloDados.BA_CLIENTE" Role="BA_CLIENTE" Multiplicity="0..1" />
+          <End Type="ModeloDados.BA_USUARIO" Role="BA_USUARIO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BA_CLIENTE">
               <PropertyRef Name="CODCLIENTE" />
@@ -163,14 +176,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <EntityType Name="BA_PRODUTO">
+          <Key>
+            <PropertyRef Name="CODPRODUTO" />
+          </Key>
+          <Property Name="CODPRODUTO" Type="Int32" Nullable="false" />
+          <Property Name="IMG" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TITULO" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRICAO" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VALOR" Type="Double" Nullable="false" />
+          <Property Name="CATEGORIA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BeloArtEcommerceModelStoreContainer" CdmEntityContainer="ModeloEntidades">
+        <EntityContainerMapping StorageEntityContainer="ModeloDadosStoreContainer" CdmEntityContainer="Context">
           <EntitySetMapping Name="BA_CLIENTE">
-            <EntityTypeMapping TypeName="BeloArtEcommerceModel.BA_CLIENTE">
+            <EntityTypeMapping TypeName="ModeloDados.BA_CLIENTE">
               <MappingFragment StoreEntitySet="BA_CLIENTE">
                 <ScalarProperty Name="DTNASCIMENTO" ColumnName="DTNASCIMENTO" />
                 <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
@@ -183,7 +207,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BA_ENDERECO">
-            <EntityTypeMapping TypeName="BeloArtEcommerceModel.BA_ENDERECO">
+            <EntityTypeMapping TypeName="ModeloDados.BA_ENDERECO">
               <MappingFragment StoreEntitySet="BA_ENDERECO">
                 <ScalarProperty Name="CODCLIENTE" ColumnName="CODCLIENTE" />
                 <ScalarProperty Name="COMPLEMENTO" ColumnName="COMPLEMENTO" />
@@ -197,7 +221,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BA_USUARIO">
-            <EntityTypeMapping TypeName="BeloArtEcommerceModel.BA_USUARIO">
+            <EntityTypeMapping TypeName="ModeloDados.BA_USUARIO">
               <MappingFragment StoreEntitySet="BA_USUARIO">
                 <ScalarProperty Name="CODCLIENTE" ColumnName="CODCLIENTE" />
                 <ScalarProperty Name="TIPOUSUARIO" ColumnName="TIPOUSUARIO" />
@@ -207,6 +231,18 @@
                 <ScalarProperty Name="SENHA" ColumnName="SENHA" />
                 <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
                 <ScalarProperty Name="CODUSUARIO" ColumnName="CODUSUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BA_PRODUTO">
+            <EntityTypeMapping TypeName="ModeloDados.BA_PRODUTO">
+              <MappingFragment StoreEntitySet="BA_PRODUTO">
+                <ScalarProperty Name="CATEGORIA" ColumnName="CATEGORIA" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="TITULO" ColumnName="TITULO" />
+                <ScalarProperty Name="IMG" ColumnName="IMG" />
+                <ScalarProperty Name="CODPRODUTO" ColumnName="CODPRODUTO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

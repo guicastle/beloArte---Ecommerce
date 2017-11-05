@@ -11,16 +11,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Seja Bem Vindo - beloArte</title>    
+    <title>Seja Bem Vindo - beloArte</title>
 
     <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/css/Site.css" rel="stylesheet" />
-    
+
 </head>
 <body>
     @RenderPage("~/Views/_Navbar.cshtml")
 
-    <div class="jumbotron" 
+    <div class="jumbotron"
          style="margin-bottom: 0px;
         background-image: url(http://www.revistaapolice.com.br/wp-content/uploads/2016/04/Axa-Art-projeta-dobrar-carteira-de-segurados-no-Brasil.jpg);
         background-position: 0% 25%;background-size: cover;background-repeat: no-repeat;color: white;
@@ -374,19 +374,44 @@
                         </div>
                     </div>
 
-                </div>              
+                </div>
             </div>
-        </div>        
+        </div>
     </div>
 
     <hr />
 
-    @RenderPage("~/Views/_Footer.cshtml")
+    @RenderPage("~/Views/_Footer.cshtml");
 
     <!-- /Scripts -->
     <script src="~/Content/vendor/jquery/jquery.min.js"></script>
     <script src="~/Content/vendor/popper/popper.min.js"></script>
     <script src="~/Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            carregarProdutos();
+            
+        });
+
+        function carregarProdutos() {
+            $.ajax({
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                url: 'http://beloart.azurewebsites.net/api/product',
+                type: 'GET',
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+
+            });
+        }
+
+    </script>
 
 </body>
 </html>

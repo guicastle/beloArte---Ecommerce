@@ -13,10 +13,10 @@ namespace beloArte.Domain
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ModeloEntidades : DbContext
+    public partial class Context : DbContext
     {
-        public ModeloEntidades()
-            : base("name=ModeloEntidades")
+        public Context()
+            : base("name=Context")
         {
         }
     
@@ -28,5 +28,6 @@ namespace beloArte.Domain
         public virtual DbSet<BA_CLIENTE> BA_CLIENTE { get; set; }
         public virtual DbSet<BA_ENDERECO> BA_ENDERECO { get; set; }
         public virtual DbSet<BA_USUARIO> BA_USUARIO { get; set; }
+        public virtual DbSet<BA_PRODUTO> BA_PRODUTO { get; set; }
     }
 }

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>beloArte.Domain</RootNamespace>
     <AssemblyName>beloArte.Domain</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,9 +56,13 @@
     <Compile Include="BA_ENDERECO.cs">
       <DependentUpon>ModeloDados.tt</DependentUpon>
     </Compile>
+    <Compile Include="BA_PRODUTO.cs">
+      <DependentUpon>ModeloDados.tt</DependentUpon>
+    </Compile>
     <Compile Include="BA_USUARIO.cs">
       <DependentUpon>ModeloDados.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entidades Temp\Product.cs" />
     <Compile Include="ModeloDados.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,32 +81,30 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="ModeloDados.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModeloDados.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="ModeloDados.edmx.diagram">
       <DependentUpon>ModeloDados.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="ModeloDados.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModeloDados.Context.cs</LastGenOutput>
       <DependentUpon>ModeloDados.edmx</DependentUpon>
+      <LastGenOutput>ModeloDados.Context.cs</LastGenOutput>
     </Content>
     <Content Include="ModeloDados.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeloDados.edmx</DependentUpon>
       <LastGenOutput>ModeloDados.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
