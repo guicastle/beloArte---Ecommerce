@@ -126,6 +126,20 @@
         .tooltip-inner {
             padding: 1.3em;
         }
+
+        button.qty-change {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid #e3e3e3;
+        }
+
+        .qty-input {
+            height: 30px;
+            width: 80px;
+            text-align: center;
+        }
     </style>
 
 </head>
@@ -144,7 +158,7 @@
                             <div class="preview-pic tab-content">
                                 <!--Recomendavel 400px252 -->
                                 <div class="tab-pane active" id="pic-1">
-                                    <img src="@(item.IMG)pri.jpg" />
+                                    <img class="imgPrincipal" src="@(item.IMG)pri.jpg" />
                                 </div>
                                 <div class="tab-pane" id="pic-2">
                                     <img src="@(item.IMG)seg.jpg" />
@@ -188,8 +202,17 @@
                             </div>
                             <p class="product-description">@item.DESCRICAO</p>
                             <h4 class="price">Preço: <span>R$ @item.VALOR</span></h4>
+
+                            <div class="qty-changer">
+                                <button class="qty-change" onclick="diminuirQtd()">-</button>
+                                <input style="border: 1px solid #ccc; box-shadow: inset 0 1px 3px #ddd; border-radius: 4px; box-sizing: border-box;" class="qty-input form-group" type="number" value="1" />
+                                <button class="qty-change" onclick="aumentarQtd()">+</button>
+                            </div>
+
+
+
                             <div class="action">
-                                <button class="add-to-cart btn btn-primary" type="button">Adicionar no carrinho</button>
+                                <button class="add-to-cart btn btn-primary" onclick="adicionarCarrinho()" type="button">Adicionar no carrinho</button>
                                 <button class="like btn btn-primary" type="button"><span class="fa fa-heart"></span></button>
                             </div>
                         </div>
@@ -199,9 +222,50 @@
         </div>
     }
     <!-- /Scripts -->
+
     <script src="~/Content/vendor/jquery/jquery.min.js"></script>
     <script src="~/Content/vendor/popper/popper.min.js"></script>
     <script src="~/Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+        function adicionarCarrinho() {
+
+            var oldItems = JSON.parse(localStorage.getItem('itemsArray')) || [];
+
+            var newItem = {
+                'imgPrincipal': $('.imgPrincipal').attr('src'),
+                'titulo': $('.product-title').text(),
+                'descricao': $('.product-description').text(),
+                'preco': $('.price span').text()
+            };
+
+            oldItems.push(newItem);
+
+            localStorage.setItem('itemsArray', JSON.stringify(oldItems));
+
+        }
+
+        function diminuirQtd() {
+            var qtd = parseInt($('.qty-input').val());
+
+            if (qtd > 0) {
+                qtd = qtd - 1;
+                $('.qty-input').val(qtd);
+            }
+                
+
+        }
+
+        function aumentarQtd() {
+            var qtd = parseInt($('.qty-input').val());
+
+            qtd = qtd + 1;
+            $('.qty-input').val(qtd);
+
+        }
+
+    </script>
 
 </body>
 </html>
