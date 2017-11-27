@@ -49,18 +49,19 @@
   <ItemGroup>
     <Compile Include="ClienteDAL\ClienteDAL.cs" />
     <Compile Include="EnderecoDAL\EnderecoDAL.cs" />
+    <Compile Include="ProdutoDAL\ProdutoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioDAL\UsuarioDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\beloArte.Domain\beloArte.Domain.csproj">
       <Project>{b07f78c9-7cbb-4db0-9ec2-25fd9f78652e}</Project>
       <Name>beloArte.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

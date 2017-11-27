@@ -105,6 +105,17 @@
     <Content Include="Content\icons\icons-logo\logo.png" />
     <Content Include="Content\icons\icons-logo\logo130p80.png" />
     <Content Include="Content\icons\logo.png" />
+    <Content Include="Content\img\bowls.JPG" />
+    <Content Include="Content\img\pote.jpg" />
+    <Content Include="Content\img\Produto\1\pri.jpg" />
+    <Content Include="Content\img\Produto\1\seg.jpg" />
+    <Content Include="Content\img\Produto\1\ter.jpg" />
+    <Content Include="Content\img\Produto\2\pri.jpg" />
+    <Content Include="Content\img\Produto\2\seg.jpg" />
+    <Content Include="Content\img\Produto\3\pri.jpg" />
+    <Content Include="Content\img\Produto\3\seg.jpg" />
+    <Content Include="Content\img\Produto\3\terc.jpg" />
+    <Content Include="Content\img\Produto\4\pri.jpg" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -134,7 +145,8 @@
     <Compile Include="Controllers\Cliente\ClienteController.cs" />
     <Compile Include="Controllers\Exibir\ExibirController.cs" />
     <Compile Include="Controllers\Feedback\FeedbackController.cs" />
-    <Compile Include="Controllers\PaginaController.cs" />
+    <Compile Include="Controllers\Login\LoginController.cs" />
+    <Compile Include="Controllers\Principal\PaginaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -164,6 +176,7 @@
     <Content Include="Views\_Footer.cshtml" />
     <Content Include="Views\Cliente\Cadastrar.cshtml" />
     <Content Include="Views\Exibir\Produto.cshtml" />
+    <Content Include="Views\Login\_Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -173,7 +186,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Login\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\beloArte.BLL\beloArte.BLL.csproj">

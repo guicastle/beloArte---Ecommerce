@@ -1,4 +1,11 @@
-﻿<!-- Navigation -->
+﻿<style>
+    .nav-item {
+        font-family: 'Roboto', sans-serif;
+    }
+
+</style>
+
+<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: #fbfafa!important;">
     <div class="container-fluid">
         <a class="navbar-brand" href="/Pagina/Principal">
@@ -15,7 +22,7 @@
                     <a class="nav-link" href="/Feedback/Mensagem" style="color: black;">Fale Conosco</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: black;">
+                    <a class="nav-link" href="#" style="color: black;" data-toggle="modal" data-target="#login-modal">
                         <i class="fa fa-sign-in" aria-hidden="true"></i> Login
                     </a>
                 </li>
@@ -28,3 +35,5 @@
         </div>
     </div>
 </nav>
+
+@RenderPage("~/Views/Login/_Login.cshtml");

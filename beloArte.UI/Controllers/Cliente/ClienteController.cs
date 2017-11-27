@@ -12,6 +12,7 @@ namespace beloArte.UI.Controllers.Cliente
         private ClienteBLL clienteBLL;
         private UsuarioBLL usuarioBLL;
         private EnderecoBLL enderecoBLL;
+        private BA_CLIENTE clienteSalvo;
 
         public ActionResult Cadastrar()
         {
@@ -21,15 +22,20 @@ namespace beloArte.UI.Controllers.Cliente
         [HttpPost]
         public ActionResult SalvarCliente(BA_USUARIO usuario, BA_CLIENTE cliente, BA_ENDERECO endereco)
         {
-            clienteBLL = new ClienteBLL();
-            usuarioBLL = new UsuarioBLL();
-            enderecoBLL = new EnderecoBLL();
-
             try
             {
-                bool clienteSalvo = clienteBLL.SalvarCliente(cliente, usuario);
-                bool usuarioSalvo = usuarioBLL.SalvarUsuario(usuario, cliente);
-                bool enderecoSalvo = enderecoBLL.SalvarEndereco(cliente.CODCLIENTE, endereco);
+                clienteBLL = new ClienteBLL();
+                usuarioBLL = new UsuarioBLL();
+                enderecoBLL = new EnderecoBLL();
+                clienteSalvo = new BA_CLIENTE();
+
+                clienteBLL.SalvarCliente(cliente);
+
+                clienteSalvo = clienteBLL.BuscarCliente(cliente.EMAIL, cliente.CPF);
+                if (clienteSalvo != null) {
+                    usuarioBLL.SalvarUsuario(usuario, clienteSalvo);
+                    enderecoBLL.SalvarEndereco(clienteSalvo.CODCLIENTE, endereco);
+                }
             }
             catch (Exception e)
             {
@@ -38,5 +44,6 @@ namespace beloArte.UI.Controllers.Cliente
 
             return View();
         }
+
     }
 }

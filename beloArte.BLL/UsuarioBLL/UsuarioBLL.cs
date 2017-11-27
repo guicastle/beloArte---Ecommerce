@@ -1,13 +1,26 @@
 ﻿using System;
 using beloArte.Domain;
+using beloArte.DAL.UsuarioDAL;
 
 namespace beloArte.BLL.UsuarioBLL
 {
     public class UsuarioBLL
     {
-        public bool SalvarUsuario(BA_USUARIO usuario, BA_CLIENTE cliente)
+        private UsuarioDAL usuarioDAL;
+
+        public void SalvarUsuario(BA_USUARIO usuario, BA_CLIENTE cliente)
         {
-            return true;
+            try
+            {
+                usuarioDAL = new UsuarioDAL();
+                usuario.CODCLIENTE = cliente.CODCLIENTE;
+
+                usuarioDAL.SalvarUsuario(usuario);
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

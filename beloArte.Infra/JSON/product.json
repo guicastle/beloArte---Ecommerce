@@ -1,0 +1,44 @@
+{
+  "quantity": 0,
+  "value": null,
+  "valueList": [
+    {
+      "codProduct": "PRD76332",
+      "description": "Bote decorativo",
+      "info": "Botes decorativos, feito a mão, com varias cores",
+      "value": 335.88,
+      "profitPercentage": 20.00,
+      "profitValue": 55.98,
+      "hoursToProduce": "3",
+      "minutesToProduce": "0",
+      "totalTimeWorked": 30.00,
+      "costPerHour": 9.33,
+      "costPerTimeWorked": 279.90,
+      "totalCostMaterials": 0.00,
+      "userId": 2,
+      "user": {
+        "active": true,
+        "password": "0910E2108A5E4BA769021715BB92E24B",
+        "email": "a@a",
+        "eUserType": 2,
+        "lastLogin": "2017-10-24T22:26:47.517",
+        "showWellcomeMessage": false,
+        "showInitialTutorial": true,
+        "id": 2,
+        "registrationDate": "2017-10-14T23:19:29.107",
+        "exclusionDate": null
+      },
+      "listMaterialProduct": null,
+      "listProductImages": null,
+      "id": 1,
+      "registrationDate": "2017-10-24T22:30:10.093",
+      "exclusionDate": null
+    }
+  ],
+  "message": null,
+  "title": null,
+  "logicalTest": false,
+  "updateNotifications": false,
+  "statusCode": 200,
+  "operationType": 0
+}
